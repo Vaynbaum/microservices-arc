@@ -1,0 +1,45 @@
+version: "3.6"
+
+services:
+
+  game:
+    image: game
+    restart: always
+    networks:
+      - microservices
+    ports:
+      - 3000:3000
+
+  post:
+    image: post
+    restart: always
+    networks:
+      - microservices
+    ports:
+      - 3001:3001
+
+  similarity:
+    image: similarity
+    restart: always
+    networks:
+      - microservices
+    ports:
+      - 3002:3002
+  
+  gateway:
+    image: gateway
+    restart: always
+    networks:
+      - microservices
+    ports:
+      - 3003:3003
+
+  frontend:
+    image: frontend
+    restart: always
+    networks:
+      - microservices
+    ports:
+      - 3004:3004
+networks:
+    microservices:

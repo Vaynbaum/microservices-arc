@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="./public/common.css">
+    <link rel="stylesheet" href="./public/main.css">
+    <meta charset="utf-8" />
+</head>
+<body>
+    {{> menu}}
+    <div class="content">
+    <h1>{{title}}</h1>
+    <div class="posts">
+        {{#posts}}
+        <div class="post card">
+            <h3 class="post-title">{{name}}</h3>
+            <p class="post-description">{{description}}</p>
+            <div >
+                Автор: {{author}}
+            </div>
+           <div>
+                Оригинальность: {{originality}}%
+            </div>
+        </div>
+        {{/posts}}
+    </div>
+    </div>
+</body>
+<html>

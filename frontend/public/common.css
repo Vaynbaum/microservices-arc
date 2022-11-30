@@ -1,0 +1,106 @@
+.content {
+    margin-top: 50px;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.menu {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: white;
+    width: 100%;
+    box-shadow: 0px 5px 5px -5px rgba(34, 60, 80, 0.6);
+    height: 50px;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+.menu a {
+    float: left;
+    padding: 10px;
+    border-radius: 4px;
+    transition: 0.3s;
+    color: tomato;
+    background-color: white;
+}
+
+.menu a:hover {
+    background-color: tomato;
+    color: white;
+
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+h1 {
+    padding: 20px;
+    padding-bottom: 0;
+}
+
+.card {
+    background-color: white;
+    padding: 10px;
+    row-gap: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+    border-radius: 4px;
+}
+
+.block {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    border: none;
+    padding: 10px;
+    background: tomato;
+    border-radius: 4px;
+    color: white;
+    transition: 0.3s;
+    opacity: 0.7;
+}
+
+button:hover {
+    opacity: 1;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+input,
+textarea,
+select {
+    border: none;
+    outline: none;
+    padding: 10px;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select :focus-visible {
+    outline: none;
+}

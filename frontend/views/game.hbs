@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="./public/common.css">
+    <link rel="stylesheet" href="./public/game.css">
+    <meta charset="utf-8" />
+</head>
+<body>
+    {{> menu}}
+    <div class="content">
+        <h1>{{title}}</h1>
+        <div class="game block">
+            <form name="gameForm" class="card">
+                <select 
+                    name="choice" 
+                    onfocus='this.size=4;' 
+                    onblur='this.size=0;' 
+                    onchange='this.size=1; this.blur();'>
+                    {{#choices}}
+                        <option>{{this}}</option>
+                    {{/choices}}
+                </select>
+                <button type="submit" id="submit">Сыграть</button>
+                <div class="bot" id="bot"></div>
+                <div class="result" id="result">
+                    
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        async function play(userChoice) {
+            const response = await fetch(`/api/game?user_action=${userChoice}`, {
+                method: "GET",
+                headers: { "Accept": "application/json" }
+            });
+            if (response.ok === true) {
+                const res = await response.json();
+                document.getElementById("bot").innerHTML =`Компьютер: ${res.computer_action}`
+                document.getElementById("result").innerHTML =`Результат: ${res.result}`
+            }
+        }
+
+        document.getElementById("submit").addEventListener("click", function (e) {
+            e.preventDefault();
+            const form = document.forms["gameForm"];
+            const userChoice = form.elements["choice"].value;
+            play(userChoice)
+        });
+    </script>
+</body>
+<html>

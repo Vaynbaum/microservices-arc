@@ -1,0 +1,36 @@
+.posts {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 20px;
+}
+
+.post {
+    justify-content: space-between;
+}
+
+@media (min-width: 320px) {
+    .posts {
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    .post {
+        width: 100%;
+    }
+}
+
+@media (min-width: 600px) {
+    .posts {
+        padding: 20px;
+        flex-direction: row;
+    }
+
+    .post {
+        width: 30%;
+    }
+}
+
+/* @media (min-width:1024px) {} */

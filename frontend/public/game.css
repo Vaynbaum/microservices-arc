@@ -1,0 +1,31 @@
+
+
+select option {
+    padding: 5px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+select option:checked,
+select option:hover {
+    box-shadow: 0 0 10px 100px tomato inset;
+    color: white;
+}
+
+select:focus>option:checked {
+    color: white;
+    background: tomato;
+}
+
+
+@media (min-width: 320px) {
+    form {
+        width: 100%;
+    }
+}
+
+@media (min-width: 570px) {
+    form {
+        width: 30%;
+    }
+}

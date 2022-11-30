@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="./public/common.css">
+    <link rel="stylesheet" href="./public/post.css">
+    <meta charset="utf-8" />
+</head>
+<body>
+    {{> menu}}
+    <div class="content">
+        <h1>{{title}}</h1>
+        <div class="post block">
+            <form name="postForm" class="card">
+                <input placeholder="Название поста" name="name" type="text">
+                <textarea resize placeholder="Описание поста" name="description"></textarea>
+                <input placeholder="Фамилия и имя автора"  name="author" type="text">
+                <button type="submit" id="submit">Сохранить</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        async function createPost(name,description,author) {
+            const response = await fetch('/api/post', {
+                method: "POST",
+                headers: { "Accept": "application/json", "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    name: name,
+                    description: description,
+                    author:author
+                })
+            });
+            if (response.ok === true) {
+                document.location.href = "/";
+            }
+        }
+
+        document.getElementById("submit").addEventListener("click", function (e) {
+            e.preventDefault();
+            const form = document.forms["postForm"];
+            const name = form.elements["name"].value;
+            const description = form.elements["description"].value;
+            const author = form.elements["author"].value;
+            console.log(name, description, author)
+            createPost(name,description,author)
+        });
+    </script>
+</body>
+<html>
