@@ -3,7 +3,7 @@ version: "3.6"
 services:
 
   game:
-    image: game
+    image: vaynbaum/prj:game
     restart: always
     networks:
       - microservices
@@ -11,7 +11,7 @@ services:
       - 3000:3000
 
   post:
-    image: post
+    image: vaynbaum/prj:post
     restart: always
     networks:
       - microservices
@@ -19,7 +19,7 @@ services:
       - 3001:3001
 
   similarity:
-    image: similarity
+    image: vaynbaum/prj:similarity
     restart: always
     networks:
       - microservices
@@ -27,7 +27,7 @@ services:
       - 3002:3002
   
   gateway:
-    image: gateway
+    image: vaynbaum/prj:gateway
     restart: always
     networks:
       - microservices
@@ -35,7 +35,7 @@ services:
       - 3003:3003
 
   frontend:
-    image: frontend
+    image: vaynbaum/prj:frontend
     restart: always
     networks:
       - microservices
