@@ -1,4 +1,4 @@
-# microservices-arc
+# microservices-architecture
 
 Демострационный пример для лекции по микросервисной архитектуре
 
